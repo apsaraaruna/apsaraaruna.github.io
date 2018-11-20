@@ -3951,3 +3951,7 @@ body.is-mobile .banner > article {
 .text-center {
 	text-align: center;
 }
+
+a.portfolio-title {
+	text-decoration: none;
+}
