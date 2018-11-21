@@ -4103,10 +4103,11 @@ body.is-loading .banner:after {
 
 	.banner > article p {
 		margin-bottom: 1rem;
+		font-size: 9px;
 	}
 
 	.banner > article h2 {
-		font-size: 4em;
+		font-size: 2em;
 	}
 
 }
@@ -4181,4 +4182,8 @@ a.portfolio-title {
 
 .space-t {
 	margin-top: 20px !important;
+}
+
+.gallery-img{
+	width: 375px;
 }
