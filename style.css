@@ -19,6 +19,7 @@ body {
   font-size: 100%;
 }
 
+/*$purple-gradient: linear-gradient(45deg, rgba(87,29,146,1) 0%,rgba(172,25,102,1) 100%);*/
 #particles-js {
   position: absolute;
   width: 100%;
@@ -96,6 +97,16 @@ body {
   border-radius: 10px;
   padding: 20px 20px 20px 20px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  background-image: url(bg.png);
+  background-repeat: no-repeat;
+  background-position: 0% -14%;
+}
+.wrapper .top-icons .dropdown .dropdown-menu {
+  padding: 0;
+  border-radius: 0;
+}
+.wrapper .top-icons .dropdown .dropdown-menu li a:active {
+  background-color: #1877f2;
 }
 .wrapper .top-icons i {
   color: #080911;
@@ -177,14 +188,19 @@ body {
   height: 42px;
   outline: none;
   border: none;
-  display: block;
+  display: inline-block;
   cursor: pointer;
   font-weight: 300;
   margin-left: auto;
   margin-right: auto;
   border-radius: 70px;
   box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
-  background: linear-gradient(to bottom right, #C90A6D, #FF48A0);
+  background: linear-gradient(to bottom right, #1877f2, #2d88ff);
+}
+.wrapper .profile .btn:hover {
+  background: transparent;
+  border: 1px solid #1877f2;
+  color: #1877f2;
 }
 
 .social-icons {
@@ -234,15 +250,19 @@ body {
   background: #e60023;
 }
 .social-icons .icon:nth-of-type(9) a {
-  background: #1769ff;
+  background: #ff4500;
 }
 .social-icons .icon:nth-of-type(10) a {
-  background: #00aff0;
+  background: #1769ff;
 }
 .social-icons .icon:nth-of-type(11) a {
-  background: #fffc00;
+  background: #00aff0;
 }
 .social-icons .icon:nth-of-type(12) a {
+  background: #fffc00;
+  color: #333;
+}
+.social-icons .icon:nth-of-type(13) a {
   background: #0088cc;
 }
 .social-icons .icon h4 {
