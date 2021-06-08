@@ -147,7 +147,6 @@ body {
   text-align: center;
   border-radius: 100%;
   background: linear-gradient(to bottom right, #1877f2, #2d88ff);
-  padding-top: 0.5px;
 }
 .wrapper .profile .thumbnail {
   width: 124px;
@@ -264,6 +263,9 @@ body {
 }
 .social-icons .icon:nth-of-type(13) a {
   background: #0088cc;
+}
+.social-icons .icon:nth-of-type(14) a {
+  background: #000;
 }
 .social-icons .icon h4 {
   color: #080911;
