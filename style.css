@@ -231,40 +231,44 @@ body {
   background: #333;
 }
 .social-icons .icon:nth-of-type(3) a {
-  background: #3b5998;
+  color: #f48024;
+  background: #222426;
 }
 .social-icons .icon:nth-of-type(4) a {
-  background: #1da1f2;
+  background: #3b5998;
 }
 .social-icons .icon:nth-of-type(5) a {
-  background: linear-gradient(45deg, #405de6 10%, #5851db 20%, #833ab4 30%, #c13584 40%, #e1306c 50%, #fd1d1d 60%, #f56040 70%, #fcaf45 80%, #ffdc80 90%);
+  background: #1da1f2;
 }
 .social-icons .icon:nth-of-type(6) a {
-  background: #0077b5;
+  background: linear-gradient(45deg, #405de6 10%, #5851db 20%, #833ab4 30%, #c13584 40%, #e1306c 50%, #fd1d1d 60%, #f56040 70%, #fcaf45 80%, #ffdc80 90%);
 }
 .social-icons .icon:nth-of-type(7) a {
-  background: #ff0000;
+  background: #0077b5;
 }
 .social-icons .icon:nth-of-type(8) a {
-  background: #e60023;
+  background: #ff0000;
 }
 .social-icons .icon:nth-of-type(9) a {
-  background: #ff4500;
+  background: #e60023;
 }
 .social-icons .icon:nth-of-type(10) a {
-  background: #1769ff;
+  background: #ff4500;
 }
 .social-icons .icon:nth-of-type(11) a {
-  background: #00aff0;
+  background: #1769ff;
 }
 .social-icons .icon:nth-of-type(12) a {
+  background: #00aff0;
+}
+.social-icons .icon:nth-of-type(13) a {
   background: #fffc00;
   color: #333;
 }
-.social-icons .icon:nth-of-type(13) a {
+.social-icons .icon:nth-of-type(14) a {
   background: #0088cc;
 }
-.social-icons .icon:nth-of-type(14) a {
+.social-icons .icon:nth-of-type(15) a {
   background: #000;
 }
 .social-icons .icon h4 {
