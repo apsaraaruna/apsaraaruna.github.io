@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheque Writer: cheque printing software for RAKBANK cheques (UAE)</title>
+<meta name="description" content="Free Windows software to print RAKBANK cheques in the UAE. Automatic amount in words, saved payees, exact print preview and per-field alignment. Works offline. Built by Apsara, Zynex Creatives.">
+<meta property="og:title" content="Cheque Writer: print RAKBANK cheques in seconds">
+<meta property="og:description" content="Automatic amount in words, saved payees, exact print preview. Windows, works offline.">
+<meta property="og:image" content="https://apsaraaruna.github.io/cheque-writer/assets/app-main.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/icon.png">
+<style>
+  :root{
+    --ink:#14202e; --muted:#5d6b7b; --line:#e3e8ee; --bg:#f6f8fb;
+    --red:#c8102e; --red-d:#a00d25; --blue:#1f4fbf; --paper:#eaf7f8;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+  a{color:var(--blue)}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+  .brand img{width:30px;height:30px}
+  nav .links{margin-left:auto;display:flex;gap:20px;align-items:center}
+  nav .links a{color:var(--muted);text-decoration:none;font-size:15px}
+  nav .links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:16px;border:1px solid transparent;transition:.15s}
+  .btn.primary{background:var(--red);color:#fff}
+  .btn.primary:hover{background:var(--red-d)}
+  .btn.ghost{border-color:#c9d2dc;color:var(--ink);background:#fff}
+  .btn.ghost:hover{background:var(--bg)}
+  .btn.sm{padding:8px 14px;font-size:14px}
+
+  header.hero{background:linear-gradient(180deg,var(--paper) 0%,#fff 100%);padding:70px 0 40px;overflow:hidden}
+  .hero .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--red);background:#fff;border:1px solid #f2c7cf;padding:5px 11px;border-radius:30px}
+  h1{font-size:46px;line-height:1.1;margin:16px 0 16px;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--red)}
+  .lead{font-size:19px;color:var(--muted);max-width:540px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
+  .small{font-size:13px;color:var(--muted)}
+  .hero-shot{border-radius:12px;box-shadow:0 20px 50px rgba(20,32,46,.18);border:1px solid var(--line);width:100%;display:block;background:#fff}
+
+  .words-demo{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;max-width:540px}
+  .words-demo label{font-size:13px;font-weight:600;color:var(--muted)}
+  .words-demo input{width:100%;font-size:20px;padding:8px 10px;border:1px solid #c9d2dc;border-radius:6px;margin:6px 0 8px;font-family:inherit}
+  .words-demo .out{font-family:Arial,sans-serif;font-size:15px;min-height:44px;color:var(--ink)}
+  .words-demo .toggle{display:flex;gap:6px;margin-top:6px}
+  .words-demo .toggle button{font:inherit;font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid #c9d2dc;background:#fff;cursor:pointer}
+  .words-demo .toggle button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  section{padding:70px 0}
+  section.alt{background:var(--bg)}
+  h2{font-size:34px;letter-spacing:-.01em;margin:0 0 10px}
+  .sub{color:var(--muted);font-size:17px;max-width:680px;margin:0 0 36px}
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+  .feat .ic{width:40px;height:40px;border-radius:10px;background:#fdecef;color:var(--red);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+  .feat h3{margin:0 0 6px;font-size:17px}
+  .feat p{margin:0;color:var(--muted);font-size:15px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-bottom:60px}
+  .split:last-child{margin-bottom:0}
+  .split.rev .txt{order:2}
+  .split img{width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 12px 30px rgba(20,32,46,.12)}
+  .split h3{font-size:24px;margin:0 0 10px}
+  .split p{color:var(--muted);margin:0 0 12px}
+  .split ul{margin:0;padding-left:20px;color:var(--muted)}
+  .split li{margin:4px 0}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;position:relative}
+  .step:before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:20px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .step h3{margin:8px 0 6px;font-size:16px}
+  .step p{margin:0;color:var(--muted);font-size:14.5px}
+
+  .dl{background:var(--ink);color:#fff;border-radius:16px;padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+  .dl h2{color:#fff}
+  .dl p{color:#c4cfdb;margin:0 0 6px}
+  .dl .meta{font-size:14px;color:#9fb0c2;margin-top:14px}
+  .dl .note{background:rgba(255,255,255,.07);border-radius:10px;padding:16px;font-size:14px;color:#d5dee8}
+  .dl .note b{color:#fff}
+
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+  .faq summary{cursor:pointer;font-weight:600;font-size:16px}
+  .faq p{color:var(--muted);margin:10px 0 0}
+
+  .about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  .avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--red),#7a0a1c);color:#fff;font-size:38px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .about h3{margin:0 0 4px;font-size:22px}
+  .about .role{color:var(--red);font-weight:600;margin:0 0 10px}
+  .about p{color:var(--muted);margin:0 0 14px}
+  .about .row{display:flex;gap:10px;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .hero .grid,.split,.dl,.about{grid-template-columns:1fr}
+    .split.rev .txt{order:0}
+    .features{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    h1{font-size:36px}
+    nav .links a:not(.btn){display:none}
+  }
+  @media (max-width:560px){
+    .features,.steps{grid-template-columns:1fr}
+    .about{text-align:center}.about .avatar{margin:auto}.about .row{justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/icon.png" alt="">Cheque Writer</a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+      <a class="btn primary sm" href="#download">Download</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">For businesses in the UAE</span>
+      <h1>Print <em>RAKBANK cheques</em> in seconds. No handwriting, no mistakes.</h1>
+      <p class="lead">Type the payee and amount. Cheque Writer writes the amount in words, lines everything up on your cheque leaf and prints it. Clean, consistent cheques every time.</p>
+      <div class="cta">
+        <a class="btn primary" href="#download">⬇ Download for Windows</a>
+        <a class="btn ghost" href="#features">See features</a>
+      </div>
+      <p class="small">Free · Windows 10/11 (64-bit) · Works offline · Your data stays on your PC</p>
+
+      <div class="words-demo" aria-label="Try the amount in words">
+        <label for="demoAmt">Try it: type an amount in AED</label>
+        <input id="demoAmt" type="number" step="0.01" value="12450.75" inputmode="decimal">
+        <div class="out" id="demoOut"></div>
+        <div class="toggle"><button class="on" data-e="uk">UK English</button><button data-e="us">US English</button></div>
+      </div>
+    </div>
+    <div>
+      <img class="hero-shot" src="assets/cheque-preview.jpg" alt="Cheque Writer showing a filled cheque preview with payee, amount in words and amount in figures">
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Everything you need to print cheques</h2>
+    <p class="sub">Built for offices and trading companies that write a lot of cheques every month and want them right the first time.</p>
+    <div class="features">
+      <div class="feat"><div class="ic">Aa</div><h3>Automatic amount in words</h3><p>"Twelve Thousand Four Hundred and Fifty and Seventy-Five Fils Only". Correct every time, in UK or US English.</p></div>
+      <div class="feat"><div class="ic">👥</div><h3>Saved payees</h3><p>Save your suppliers once, then pick them from a list. No retyping, no spelling mistakes.</p></div>
+      <div class="feat"><div class="ic">✱</div><h3>Security symbols</h3><p>Wrap the amount, words and payee with ** or # (or your own symbol) so nothing can be added later.</p></div>
+      <div class="feat"><div class="ic">👁</div><h3>Exact print preview</h3><p>See the full page exactly as it will print, with the same size and positions and no scaling.</p></div>
+      <div class="feat"><div class="ic">✥</div><h3>Drag-to-align fields</h3><p>Move the date, payee, words and amount with your mouse or the arrow keys, in 0.5 mm steps.</p></div>
+      <div class="feat"><div class="ic">📏</div><h3>Alignment ruler</h3><p>Print a mm grid on a sample cheque, read two numbers, and your printer is calibrated.</p></div>
+      <div class="feat"><div class="ic">🧾</div><h3>Cheque history</h3><p>Every printed cheque is logged with date, number, payee, amount and memo. Export it to CSV for accounts.</p></div>
+      <div class="feat"><div class="ic">🔒</div><h3>Private and offline</h3><p>No account, no cloud, no internet needed. Everything is saved in your Documents folder.</p></div>
+      <div class="feat"><div class="ic">🖨</div><h3>Any printer</h3><p>Print on cheque-size paper or A4, straight to your printer or through the Windows print dialog.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <h3>Fill in, check, print</h3>
+        <p>Pick a date and payee and type the amount. The preview updates as you type, on top of an image of the cheque leaf.</p>
+        <ul>
+          <li>Cheque number counts up after every print</li>
+          <li>Long amounts wrap neatly onto the second line</li>
+          <li>Add a memo, like an invoice number, for your records</li>
+        </ul>
+      </div>
+      <img src="assets/app-main.jpg" alt="Main Cheque Writer screen with cheque details form and live preview" loading="lazy">
+    </div>
+    <div class="split rev">
+      <div class="txt">
+        <h3>Line it up perfectly with your printer</h3>
+        <p>Every printer feeds paper a little differently. On the Fields page you can drag each field into place, nudge it with arrow keys, and set its width, font size, alignment and bold.</p>
+        <ul>
+          <li>Positions in real millimetres</li>
+          <li>Hide any field you don't want printed</li>
+          <li>Reset a single field or all of them</li>
+        </ul>
+      </div>
+      <img src="assets/app-fields.jpg" alt="Fields page for dragging and nudging each cheque field" loading="lazy">
+    </div>
+    <div class="split">
+      <div class="txt">
+        <h3>What you see is what prints</h3>
+        <p>Before anything goes to the printer you see the full sheet, with the cheque position shown. The cheque background is only a guide on screen. Just the text prints onto your cheque.</p>
+        <ul>
+          <li>Choose the printer and copies</li>
+          <li>Use the Windows print dialog or print directly</li>
+          <li>Test print with a cheque outline on plain paper</li>
+        </ul>
+      </div>
+      <img src="assets/print-preview.jpg" alt="Print preview window showing the exact page that will be printed" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>Up and running in 5 minutes</h2>
+    <p class="sub">Set it up once per printer. After that, each cheque takes a few seconds.</p>
+    <div class="steps">
+      <div class="step"><h3>Install</h3><p>Download the installer and run it. It adds desktop and Start menu shortcuts.</p></div>
+      <div class="step"><h3>Calibrate</h3><p>Feed a sample cheque and print the alignment ruler. Enter where the cheque edges land.</p></div>
+      <div class="step"><h3>Test print</h3><p>Print on a sample cheque and fine-tune any field on the Fields page.</p></div>
+      <div class="step"><h3>Print cheques</h3><p>Pick a payee, type the amount, check the preview and print.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="alt">
+  <div class="wrap">
+    <div class="dl">
+      <div>
+        <h2>Download Cheque Writer</h2>
+        <p>Free for Windows 10 and 11 (64-bit). Install it over an older version and your payees, history and settings are kept.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/apsaraaruna/apsaraaruna.github.io/releases/download/cheque-writer-v1.0.6/Cheque-Writer-Setup.exe">⬇ Download installer (.exe)</a>
+          <a class="btn ghost" href="https://github.com/apsaraaruna/apsaraaruna.github.io/releases">All versions</a>
+        </div>
+        <p class="meta">Latest: v1.0.6 · about 115 MB</p>
+      </div>
+      <div class="note">
+        <b>First run on Windows:</b> the installer isn't code-signed yet, so Windows may show <i>"Windows protected your PC"</i>. Click <b>More info → Run anyway</b>.<br><br>
+        <b>Printing tip:</b> in the Windows print dialog keep <b>Scale 100% / Actual size</b> and <b>Margins: None</b>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <h2>Questions</h2>
+    <p class="sub">Can't find your answer? <a href="#about">Get in touch</a>.</p>
+    <details><summary>Does it only work with RAKBANK cheques?</summary><p>It comes set up for the standard RAKBANK cheque layout. You can move every field on the Fields page, so it can be adjusted to other UAE bank cheques too. For a ready-made layout for your bank, contact me.</p></details>
+    <details><summary>Where is my data stored?</summary><p>On your own computer, in <code>Documents\Cheque Writer\cheque-data.json</code>, with an automatic backup copy. Nothing is uploaded anywhere. Uninstalling keeps your data.</p></details>
+    <details><summary>Which printers work?</summary><p>Any Windows printer that can take a cheque leaf, through the manual feed slot or tray. You can print on a cheque-size page or on A4 with the cheque placed at the top.</p></details>
+    <details><summary>The text isn't lined up with my cheque. What do I do?</summary><p>Print the alignment ruler on a sample cheque and enter where the cheque's left and top edges land. Then do a test print and fine-tune any field on the Fields page. Also check the Windows print dialog is set to 100% scale and no margins.</p></details>
+    <details><summary>Is it really free?</summary><p>Yes. If your business needs a custom version, such as another bank, your own layout or integration with your accounting, I can build it for you.</p></details>
+    <details><summary>Can I move it to another PC?</summary><p>Yes. Use Backup on the Payees tab to save everything to one file, then Restore on the new PC.</p></details>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="about">
+      <div class="avatar">A</div>
+      <div>
+        <h3>Built by Apsara</h3>
+        <p class="role">Web developer & SEO specialist · Dubai, UAE</p>
+        <p>I've spent about 10 years building websites, WordPress plugins (10 published on WordPress.org), and custom tools that save businesses time. Through <b>Zynex Creatives</b> I help UAE businesses with web development, custom software, automation and social media content. Need software built around how your business works? Let's talk.</p>
+        <div class="row">
+          <a class="btn primary sm" href="https://zynexcreatives.com" target="_blank" rel="noopener">Zynex Creatives</a>
+          <a class="btn ghost sm" href="https://apsaraaruna.dev" target="_blank" rel="noopener">My portfolio</a>
+          <a class="btn ghost sm" href="https://github.com/apsaraaruna" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Apsara · Zynex Creatives. Cheque Writer is free to use.</div>
+    <div>Independent software, not affiliated with or endorsed by RAKBANK. RAKBANK is a trademark of its owner.</div>
+  </div>
+</footer>
+
+<script>
+/* live amount-in-words demo, same rules as the app */
+const ONES=["","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+const TENS=["","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+let ENG="uk";
+function b1000(n){let s="";if(n>=100){s+=ONES[Math.floor(n/100)]+" Hundred";n%=100;if(n)s+=ENG==="uk"?" and ":" ";}
+  if(n>=20){s+=TENS[Math.floor(n/10)];if(n%10)s+="-"+ONES[n%10];}else if(n>0)s+=ONES[n];return s;}
+function iw(n){if(n===0)return"Zero";const u=[[1e12,"Trillion"],[1e9,"Billion"],[1e6,"Million"],[1e3,"Thousand"]];let p=[];
+  for(const[v,nm]of u){if(n>=v){p.push(b1000(Math.floor(n/v))+" "+nm);n%=v;}}
+  if(n>0){if(ENG==="uk"&&p.length&&n<100)p.push("and "+b1000(n));else p.push(b1000(n));}return p.join(" ");}
+function words(v){if(v===""||isNaN(v)||v<0)return"";const c=Math.round(Number(v)*100),d=Math.floor(c/100),f=c%100;
+  let s=iw(d);if(f)s+=" and "+iw(f)+" Fils";return"**"+s+" Only**";}
+const inp=document.getElementById("demoAmt"),out=document.getElementById("demoOut");
+function upd(){out.textContent=words(inp.value);}
+inp.addEventListener("input",upd);
+document.querySelectorAll(".toggle button").forEach(b=>b.onclick=()=>{ENG=b.dataset.e;
+  document.querySelectorAll(".toggle button").forEach(x=>x.classList.toggle("on",x===b));upd();});
+upd();
+</script>
+</body>
+</html>
