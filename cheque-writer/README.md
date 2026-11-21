@@ -26,9 +26,10 @@ Requires Windows 10/11, 64-bit.
 
 ## About
 Built by **Apsara**, a web developer and SEO specialist in Dubai.
-[Zynex Creatives](https://zynexcreatives.com) · [Portfolio](https://apsaraaruna.dev)
+[apsaraaruna.dev](https://apsaraaruna.dev)
 
-Need a custom version for your bank or business? Get in touch through Zynex Creatives.
+**Do you need a customised one for your business?** Another bank's layout, several accounts,
+approvals or accounting export: [contact me](https://apsaraaruna.dev).
 
 ---
 Cheque Writer is free to use. The source code is not published in this repository.

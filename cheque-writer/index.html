@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cheque Writer: cheque printing software for RAKBANK cheques (UAE)</title>
-<meta name="description" content="Free Windows software to print RAKBANK cheques in the UAE. Automatic amount in words, saved payees, exact print preview and per-field alignment. Works offline. Built by Apsara, Zynex Creatives.">
+<meta name="description" content="Free Windows software to print RAKBANK cheques in the UAE. Automatic amount in words, saved payees, exact print preview and per-field alignment. Works offline. Built by Apsara, web developer in Dubai.">
 <meta property="og:title" content="Cheque Writer: print RAKBANK cheques in seconds">
 <meta property="og:description" content="Automatic amount in words, saved payees, exact print preview. Windows, works offline.">
 <meta property="og:image" content="https://apsaraaruna.github.io/cheque-writer/assets/app-main.jpg">
@@ -95,6 +95,14 @@
   .about p{color:var(--muted);margin:0 0 14px}
   .about .row{display:flex;gap:10px;flex-wrap:wrap}
 
+  .custom{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center;background:linear-gradient(135deg,#fff 0%,#fdf0f2 100%);border:1px solid #f2c7cf;border-radius:16px;padding:40px}
+  .custom h2{margin:12px 0 10px}
+  .custom p{color:var(--muted);margin:0 0 12px}
+  .custom ul{margin:0;padding-left:20px;color:var(--ink)}
+  .custom li{margin:6px 0}
+  .custom-cta{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px;text-align:center}
+  .custom-cta .big{font-size:18px;color:var(--ink);font-weight:600;margin-bottom:18px}
+  @media (max-width:900px){.custom{grid-template-columns:1fr;padding:26px}}
   footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
@@ -122,6 +130,7 @@
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
       <a href="#about">About</a>
+      <a href="#custom">Custom version</a>
       <a class="btn primary sm" href="#download">Download</a>
     </div>
   </div>
@@ -244,15 +253,39 @@
   </div>
 </section>
 
+<section id="custom">
+  <div class="wrap">
+    <div class="custom">
+      <div>
+        <span class="eyebrow">Custom version</span>
+        <h2>Do you need a customised one for your business?</h2>
+        <p>I can build a version of Cheque Writer that fits how your business works, set up and ready to print on day one.</p>
+        <ul>
+          <li>Your bank's cheque layout (ENBD, ADCB, FAB, Mashreq, DIB and more)</li>
+          <li>Several companies or bank accounts in one app</li>
+          <li>Approval steps, user logins and print logs</li>
+          <li>Export to Excel or your accounting software</li>
+          <li>Installed and calibrated on your office printers</li>
+        </ul>
+      </div>
+      <div class="custom-cta">
+        <p class="big">Tell me what you need. I'll get back to you with a plan and a quote.</p>
+        <a class="btn primary" href="https://apsaraaruna.dev" target="_blank" rel="noopener">Contact me →</a>
+        <p class="small" style="margin-top:12px">Based in Dubai · working with UAE businesses</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap faq">
     <h2>Questions</h2>
     <p class="sub">Can't find your answer? <a href="#about">Get in touch</a>.</p>
-    <details><summary>Does it only work with RAKBANK cheques?</summary><p>It comes set up for the standard RAKBANK cheque layout. You can move every field on the Fields page, so it can be adjusted to other UAE bank cheques too. For a ready-made layout for your bank, contact me.</p></details>
+    <details><summary>Does it only work with RAKBANK cheques?</summary><p>It comes set up for the standard RAKBANK cheque layout. You can move every field on the Fields page, so it can be adjusted to other UAE bank cheques too. For a ready-made layout for your bank, <a href="#custom">contact me</a>.</p></details>
     <details><summary>Where is my data stored?</summary><p>On your own computer, in <code>Documents\Cheque Writer\cheque-data.json</code>, with an automatic backup copy. Nothing is uploaded anywhere. Uninstalling keeps your data.</p></details>
     <details><summary>Which printers work?</summary><p>Any Windows printer that can take a cheque leaf, through the manual feed slot or tray. You can print on a cheque-size page or on A4 with the cheque placed at the top.</p></details>
     <details><summary>The text isn't lined up with my cheque. What do I do?</summary><p>Print the alignment ruler on a sample cheque and enter where the cheque's left and top edges land. Then do a test print and fine-tune any field on the Fields page. Also check the Windows print dialog is set to 100% scale and no margins.</p></details>
-    <details><summary>Is it really free?</summary><p>Yes. If your business needs a custom version, such as another bank, your own layout or integration with your accounting, I can build it for you.</p></details>
+    <details><summary>Is it really free?</summary><p>Yes. If your business needs a custom version, such as another bank, your own layout or integration with your accounting, <a href="#custom">I can build it for you</a>.</p></details>
     <details><summary>Can I move it to another PC?</summary><p>Yes. Use Backup on the Payees tab to save everything to one file, then Restore on the new PC.</p></details>
   </div>
 </section>
@@ -264,9 +297,9 @@
       <div>
         <h3>Built by Apsara</h3>
         <p class="role">Web developer & SEO specialist · Dubai, UAE</p>
-        <p>I've spent about 10 years building websites, WordPress plugins (10 published on WordPress.org), and custom tools that save businesses time. Through <b>Zynex Creatives</b> I help UAE businesses with web development, custom software, automation and social media content. Need software built around how your business works? Let's talk.</p>
+        <p>I've spent about 10 years building websites, WordPress plugins (10 published on WordPress.org), and custom tools that save businesses time. I help UAE businesses with web development, custom software and automation. Need software built around how your business works? Let's talk.</p>
         <div class="row">
-          <a class="btn primary sm" href="https://zynexcreatives.com" target="_blank" rel="noopener">Zynex Creatives</a>
+          <a class="btn primary sm" href="https://apsaraaruna.dev" target="_blank" rel="noopener">Contact me</a>
           <a class="btn ghost sm" href="https://apsaraaruna.dev" target="_blank" rel="noopener">My portfolio</a>
           <a class="btn ghost sm" href="https://github.com/apsaraaruna" target="_blank" rel="noopener">GitHub</a>
         </div>
@@ -277,7 +310,7 @@
 
 <footer>
   <div class="wrap">
-    <div>© 2026 Apsara · Zynex Creatives. Cheque Writer is free to use.</div>
+    <div>© 2026 Apsara. Cheque Writer is free to use.</div>
     <div>Independent software, not affiliated with or endorsed by RAKBANK. RAKBANK is a trademark of its owner.</div>
   </div>
 </footer>
